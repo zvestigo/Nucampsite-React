@@ -46,9 +46,11 @@ class CampsiteInfo extends Component {
 
         if (campsite) {         // Evaluates if campsite is selected
             return(
-                <div className="row">
-                    {this.renderCampsite(campsite)}
-                    {this.renderComments(campsite.comments)}
+                <div className="container">
+                    <div className="row">
+                        {this.renderCampsite(campsite)}
+                        {this.renderComments(campsite.comments)}
+                    </div>
                 </div>
                 );
         } else {                // Runs only if campsite is null
