@@ -156,6 +156,9 @@ function CampsiteInfo(props){                               // Displays panel w/
                     </div>
                 </div>
                 <div className="row">
+                    <RenderCampsite 
+                    campsite={props.campsite}
+                    />
                     <RenderComments 
                         comments={props.comments}
                         addComment={props.addComment}
