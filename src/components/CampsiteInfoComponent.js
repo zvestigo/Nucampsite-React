@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Button, Card, CardImg, CardText, CardBody, Breadcrumb, BreadcrumbItem, Label, Modal, ModalHeader, ModalBody } from 'reactstrap';
+import { Loading } from './LoadingComponent';
 import { Link } from 'react-router-dom';
 import { Control, Errors, LocalForm } from 'react-redux-form';
 
@@ -120,6 +121,26 @@ class CommentForm extends Component {
 }
 
 function CampsiteInfo(props){                               // Displays panel w/ details & Comments
+    if (props.isLoading) {
+        return (
+            <div className="container">
+                <div className="row">
+                    <Loading />
+                </div>
+            </div>
+        );
+    }
+    if (props.errMess) {
+        return (
+            <div className="container">
+                <div className="row">
+                    <div className="col">
+                        <h4>{props.errMess}</h4>
+                    </div>
+                </div>
+            </div>
+        );
+    }
     if (props.campsite) {         // Evaluates if campsite is selected
         return(
             <div className="container">
