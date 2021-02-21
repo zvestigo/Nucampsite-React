@@ -183,9 +183,8 @@ export const addPartners = partners => ({
     payload: partners
 });
 
-export const postFeedback = (feedback) => () => {    // Takes argument from handleSubmit in ContactComponent line 36 that should be an object
-    alert('Feedback is: ' + JSON.stringify(feedback)); //Test only - Shows that feedback (prev values) is no longer an object, but is undefined...
-
+export const postFeedback = (feedback) => () => {    
+   
     return fetch(baseUrl + 'feedback', {
             method: "POST",
             body: JSON.stringify(feedback),
