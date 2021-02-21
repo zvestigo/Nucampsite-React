@@ -15,7 +15,7 @@ function RenderCard({item, isLoading, errMess}) {
         <FadeTransform
             in
             transformProps={{
-                exitTransform: 'scale(0.5) translateY(50%)'
+                exitTransform: 'scale(0.9) translateY(10%)'
             }}>
             <Card>
                 <CardImg src={baseUrl + item.image} alt={item.name} />
@@ -47,7 +47,11 @@ function Home(props) {
                     />
                 </div>
                 <div className="col-md m-1">
-                    <RenderCard item={props.partner} />
+                    <RenderCard 
+                        item={props.partner} 
+                        isLoading={props.partnerLoading}
+                        errMess={props.partnerErrMess}
+                    />
                 </div>
             </div>
         </div>

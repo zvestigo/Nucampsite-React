@@ -32,13 +32,13 @@ class Contact extends Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
       
-
-    handleSubmit(values) {
-        console.log('Current State is: ' + JSON.stringify(values));
-        alert('Current State is: ' + JSON.stringify(values));
+// HELP HERE
+    handleSubmit(values) {                  // values is an object passed in on line 78
+        alert('Values is: ' + JSON.stringify(values)); // Test only - Shows that values at this point is an object containing data from form
+        this.props.postFeedback(JSON.stringify.values);   //Calls action in ActionCreators.js on line 186 ... Function is passed in through props from MainComponent.js
         this.props.resetFeedbackForm();
     }
-
+// END HELP
 
     render() {
 
@@ -75,7 +75,7 @@ class Contact extends Component {
                         <hr />
                     </div>
                     <div className="col-md-10">
-                        <Form model="feedbackForm" onSubmit={values => this.handleSubmit(values)}>
+                        <Form model="feedbackForm" onSubmit={values => this.handleSubmit(values)}>          {/* Calls function and passes in values object */}
                             <Row className="form-group">
                                 <Label htmlFor="firstName" md={2}>First Name</Label>
                                 <Col md={10}>
