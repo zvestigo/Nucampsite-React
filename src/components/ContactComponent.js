@@ -35,7 +35,7 @@ class Contact extends Component {
 // HELP HERE
     handleSubmit(values) {                  // values is an object passed in on line 78
         alert('Values is: ' + JSON.stringify(values)); // Test only - Shows that values at this point is an object containing data from form
-        this.props.postFeedback(JSON.stringify.values);   //Calls action in ActionCreators.js on line 186 ... Function is passed in through props from MainComponent.js
+        this.props.postFeedback(values);   //Calls action in ActionCreators.js on line 186 ... Function is passed in through props from MainComponent.js
         this.props.resetFeedbackForm();
     }
 // END HELP

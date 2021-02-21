@@ -188,7 +188,7 @@ export const postFeedback = (feedback) => {    // Takes argument from handleSubm
 
     return fetch(baseUrl + 'feedback', {
             method: "POST",
-            body: feedback,
+            body: JSON.stringify(feedback),
             headers: {
                 "Content-Type": "application/json"
             }
